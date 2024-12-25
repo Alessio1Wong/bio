@@ -87,6 +87,16 @@
         .nav-links a:hover {
             background-color: #5753cb;
         }
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column; /* 竖排显示按钮 */
+        align-items: center;
+    }
+    .nav-links a {
+        width: 80%; /* 按钮占满大部分宽度 */
+        margin-bottom: 10px; /* 按钮之间的间距 */
+    }
+}
     </style>
 </head>
 <body>
