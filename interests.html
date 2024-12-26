@@ -5,84 +5,180 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interests</title>
     <style>
+        /* 页面整体样式 */
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            background-color: #1c1c1e;
-            color: #f4f4f9;
+            font-family: Arial, sans-serif; /* 字体样式 */
+            margin: 0; /* 去掉默认外边距 */
+            padding: 0; /* 去掉默认内边距 */
+            color: #f4f4f9; /* 文本颜色 */
+            background-color: #1c1c1e; /* 背景颜色 */
         }
+
+        /* 页面头部样式 */
         header {
-            background-color: #ff4500;
-            color: white;
-            padding: 1.5rem 0;
-            text-align: center;
+            background-color: #ff4500; /* 背景颜色 */
+            color: white; /* 字体颜色 */
+            padding: 1.5rem 0; /* 内边距 */
+            text-align: center; /* 居中对齐 */
+            position: relative; /* 相对定位，用于导航按钮的布局 */
         }
+        
         header h1 {
-            margin: 0;
-            font-size: 2.5rem;
+            margin: 0; /* 去掉标题的外边距 */
+            font-size: 2.5rem; /* 设置字体大小 */
         }
+
+        /* 菜单按钮样式 */
+        .menu-button {
+            position: absolute; /* 绝对定位 */
+            top: 1rem; /* 顶部距离1rem */
+            right: 1rem; /* 右侧距离1rem */
+            background-color: white; /* 背景色 */
+            color: #6c63ff; /* 按钮文本颜色 */
+            padding: 0.6rem; /* 按钮内边距 */
+            border: none; /* 无边框 */
+            border-radius: 5px; /* 圆角 */
+            cursor: pointer; /* 鼠标悬停时显示手型 */
+        }
+
+        .menu-button:hover {
+            background-color: #d3d3ff; /* 悬停时的按钮颜色 */
+        }
+
+        /* 侧边导航栏样式 */
+        .nav-bar {
+            background-color: #333; /* 背景色 */
+            color: white; /* 字体颜色 */
+            position: absolute; /* 绝对定位 */
+            top: 0; /* 顶部对齐 */
+            right: 0; /* 靠右对齐 */
+            height: 100vh; /* 高度填满视口 */
+            width: 250px; /* 固定宽度 */
+            transform: translateX(100%); /* 初始隐藏在屏幕外 */
+            transition: transform 0.3s ease-in-out; /* 添加平滑过渡效果 */
+            z-index: 1000; /* 设置在页面前层显示 */
+        }
+
+        /* 激活导航栏时的样式 */
+        .nav-bar.active {
+            transform: translateX(0); /* 将导航栏移入屏幕 */
+        }
+
+        .nav-bar ul {
+            list-style: none; /* 去掉列表样式 */
+            padding: 0; /* 去掉内边距 */
+            margin: 0; /* 去掉外边距 */
+        }
+
+        .nav-bar ul li {
+            border-bottom: 1px solid #444; /* 添加每项之间的分隔线 */
+        }
+
+        .nav-bar ul li a {
+            text-decoration: none; /* 移除默认下划线 */
+            color: white; /* 链接颜色 */
+            display: block; /* 块状布局 */
+            padding: 1rem; /* 内边距 */
+        }
+
+        .nav-bar ul li a:hover {
+            background-color: #575757; /* 悬停时改变背景颜色 */
+        }
+
+        /* 主内容区域容器样式 */
         .container {
-            padding: 2rem;
-            max-width: 800px;
-            margin: 0 auto;
-            background: #2c2c2e;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-            border-radius: 8px;
-            text-align: center;
+            padding: 2rem; /* 内边距 */
+            max-width: 800px; /* 最大宽度 */
+            margin: 0 auto; /* 居中对齐 */
+            background: #2c2c2e; /* 背景色 */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.4); /* 阴影效果 */
+            border-radius: 8px; /* 圆角效果 */
+            text-align: center; /* 内容居中 */
         }
+
+        /* 图片样式 */
         .content img {
-            width: 100%;
-            max-width: 500px;
-            border-radius: 8px;
-            margin: 1.5rem 0;
+            width: 100%; /* 宽度占满容器 */
+            max-width: 500px; /* 最大宽度 */
+            border-radius: 8px; /* 圆角 */
+            margin: 1.5rem 0; /* 上下边距 */
         }
+
+        /* 文本内容样式 */
         .content p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
+            font-size: 1.2rem; /* 字体大小 */
+            line-height: 1.8; /* 行距 */
+            margin-bottom: 1.5rem; /* 下外边距 */
         }
-          
+
+        /* 页脚样式 */
         footer {
-            text-align: center;
-            margin-top: 2rem;
-            font-size: 0.9rem;
-            color: #999;
+            text-align: center; /* 居中对齐 */
+            margin-top: 2rem; /* 顶部外边距 */
+            font-size: 0.9rem; /* 字体大小 */
+            color: #999; /* 文本颜色 */
         }
+
+        /* 返回按钮样式 */
         .back-button {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 0.6rem 1.2rem;
-            background-color: #ff4500;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+            display: inline-block; /* 块状布局 */
+            margin-top: 1rem; /* 上外边距 */
+            padding: 0.6rem 1.2rem; /* 内边距 */
+            background-color: #ff4500; /* 按钮背景颜色 */
+            color: white; /* 按钮文本颜色 */
+            text-decoration: none; /* 无下划线 */
+            border-radius: 5px; /* 圆角 */
+            transition: background-color 0.3s; /* 背景色过渡效果 */
         }
+
         .back-button:hover {
-            background-color: #e03d00;
+            background-color: #e03d00; /* 鼠标悬停时的背景颜色 */
         }
     </style>
 </head>
 <body>
+    <!-- 头部区域 -->
     <header>
         <h1>Racing and More!</h1>
+        <!-- 菜单按钮 -->
+        <button class="menu-button" onclick="toggleMenu()">☰ Menu</button>
     </header>
 
+    <!-- 侧边导航栏 -->
+    <nav class="nav-bar" id="navBar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="content-projects.html">Projects</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="achievements.html">Achievements</a></li>
+            <li><a href="interests.html">Interests</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- 主内容容器 -->
     <div class="container">
         <div class="content">
             <p>When it comes to racing, my passion hits full throttle! Whether it’s the exhilarating sound of engines roaring or the razor-sharp turns on the track, I live for the adrenaline that motorsport delivers.</p>
             <p>As a fan of Daniel Ricciardo, I admire his skill, charisma, and love for the sport. Like him, I approach life with determination, a smile, and a bit of flair!</p>
-            <img src="https://github.com/Alessio1Wong/bio/blob/main/495880a1862a1b8843c144d15f2d595.jpg?raw=true" alt="Racing foto1">
+            <img src="https://github.com/Alessio1Wong/bio/blob/main/495880a1862a1b8843c144d15f2d595.jpg?raw=true" alt="Racing photo">
             <p>Speed is not just a number; it's a way of life. Whether behind a kart’s steering wheel or watching Formula 1, every moment on the track reminds me to push limits, embrace the challenge, and most importantly—enjoy the ride!</p>
-
         </div>
     </div>
 
+    <!-- 页脚 -->
     <footer>
         <a href="index.html" class="back-button">Back to Home</a>
         <p>&copy; Shaofu Wang. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        // 切换导航栏显示与隐藏
+        function toggleMenu() {
+            const navBar = document.getElementById('navBar');
+            navBar.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>

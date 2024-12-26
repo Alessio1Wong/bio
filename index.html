@@ -4,110 +4,180 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Biography</title>
-<link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
 
     <style>
+        /* 设置全局样式 */
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            background-color: #f4f4f9;
+            font-family: Arial, sans-serif; /* 使用清晰简洁的字体 */
+            margin: 0; /* 去掉默认外边距 */
+            padding: 0; /* 去掉默认内边距 */
+            color: #333; /* 设置文本颜色 */
+            background-color: #f4f4f9; /* 设置背景颜色 */
         }
+
+        /* 头部样式 */
         header {
-            background-color: #6c63ff;
-            color: white;
-            padding: 1rem 0;
-            text-align: center;
+            background-color: #6c63ff; /* 设置头部背景颜色 */
+            color: white; /* 设置头部文本颜色 */
+            padding: 1rem 0; /* 添加上下内边距 */
+            text-align: center; /* 居中对齐文本 */
+            position: relative; /* 设置相对定位 */
         }
+
+        /* 标题样式 */
         header h1 {
-            margin: 0;
-            font-size: 2.5rem;
+            margin: 0; /* 去掉外边距 */
+            font-size: 2.5rem; /* 设置标题字体大小 */
         }
+
+        /* 菜单按钮样式 */
+        .menu-button {
+            position: absolute; /* 绝对定位 */
+            top: 1rem; /* 距顶部1rem */
+            right: 1rem; /* 距右侧1rem */
+            background-color: white; /* 按钮背景颜色 */
+            color: #6c63ff; /* 按钮文本颜色 */
+            padding: 0.6rem; /* 内边距 */
+            border: none; /* 无边框 */
+            border-radius: 5px; /* 圆角边框 */
+            cursor: pointer; /* 鼠标移上变为手型 */
+        }
+
+        /* 悬停时菜单按钮颜色变化 */
+        .menu-button:hover {
+            background-color: #d3d3ff; /* 修改背景颜色 */
+        }
+
+        /* 导航栏样式 */
+        .nav-bar {
+            background-color: #333; /* 背景颜色 */
+            color: white; /* 文本颜色 */
+            position: absolute; /* 绝对定位 */
+            top: 0; /* 顶部对齐 */
+            right: 0; /* 靠右侧对齐 */
+            height: 100vh; /* 填满视口高度 */
+            width: 250px; /* 固定宽度 */
+            transform: translateX(100%); /* 初始位置移出屏幕 */
+            transition: transform 0.3s ease-in-out; /* 添加平滑过渡效果 */
+            z-index: 1000; /* 保证导航栏层级最高 */
+        }
+
+        /* 导航栏显示时样式 */
+        .nav-bar.active {
+            transform: translateX(0); /* 移回可见区域 */
+        }
+
+        /* 导航栏中的列表样式 */
+        .nav-bar ul {
+            list-style: none; /* 移除默认列表样式 */
+            padding: 0; /* 移除内边距 */
+            margin: 0; /* 移除外边距 */
+        }
+
+        /* 导航栏列表项样式 */
+        .nav-bar ul li {
+            border-bottom: 1px solid #444; /* 添加分隔线 */
+        }
+
+        /* 导航链接样式 */
+        .nav-bar ul li a {
+            text-decoration: none; /* 去掉下划线 */
+            color: white; /* 链接文本颜色 */
+            display: block; /* 使其充满父容器宽度 */
+            padding: 1rem; /* 添加内边距 */
+        }
+
+        /* 悬停时导航链接背景色变化 */
+        .nav-bar ul li a:hover {
+            background-color: #575757; /* 修改背景颜色 */
+        }
+
+        /* 主容器样式 */
         .container {
-            padding: 2rem;
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            border-radius: 8px;
-            text-align: center;
+            padding: 2rem; /* 添加内边距 */
+            max-width: 800px; /* 设置最大宽度 */
+            margin: 0 auto; /* 居中对齐 */
+            background: white; /* 背景颜色 */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 添加阴影 */
+            border-radius: 8px; /* 设置圆角 */
+            text-align: center; /* 居中对齐内容 */
         }
-        .section {
-            margin-bottom: 2rem;
-        }
-        .section h2 {
-            border-bottom: 2px solid #6c63ff;
-            padding-bottom: 0.5rem;
-        }
-        footer {
-            text-align: center;
-            margin-top: 2rem;
-            font-size: 0.9rem;
-            color: #666;
-        }
-        .link-button {
-            display: inline-block;
-            padding: 0.6rem 1.2rem;
-            margin-top: 0.8rem;
-            background-color: #6c63ff;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        .link-button:hover {
-            background-color: #5753cb;
-        }
+
+        /* 图像样式 */
         .profile-image {
-            margin-bottom: 1rem;
+            margin-bottom: 1rem; /* 添加底部外边距 */
         }
         .profile-image img {
-            max-width: 200px;
-            height: auto;
-            border-radius: 8px;
+            max-width: 150px; /* 设置最大宽度 */
+            height: auto; /* 高度自适应 */
+            border-radius: 8px; /* 设置圆角边框 */
         }
+
+        /* 导航链接组样式 */
         .nav-links {
-            margin: 2rem 0;
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-   　　flex-wrap: wrap;
+            margin: 2rem 0; /* 添加上下外边距 */
+            display: flex; /* 使用flex布局 */
+            justify-content: center; /* 水平居中 */
+            gap: 1rem; /* 项目之间间距 */
+            flex-wrap: wrap; /* 自动换行 */
         }
+
         .nav-links a {
-            padding: 0.6rem 1.2rem;
-            background-color: #6c63ff;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-    min-width: 120px; /* 确保按钮有一致的宽度 */
-    text-align: center;
+            padding: 0.6rem 1.2rem; /* 内边距 */
+            background-color: #6c63ff; /* 背景颜色 */
+            color: white; /* 文本颜色 */
+            text-decoration: none; /* 移除下划线 */
+            border-radius: 5px; /* 圆角 */
+            transition: background-color 0.3s; /* 添加背景色过渡 */
+            min-width: 200px; /* 确保按钮一致宽度 */
+            text-align: center; /* 文本居中 */
         }
+
         .nav-links a:hover {
-            background-color: #5753cb;
+            background-color: #5753cb; /* 修改悬停背景色 */
         }
-@media (max-width: 768px) {
-    .nav-links {
-        flex-direction: column; /* 竖排显示按钮 */
-        align-items: center;
-    }
-    .nav-links a {
-        width: 80%; /* 按钮占满大部分宽度 */
-        margin-bottom: 10px; /* 按钮之间的间距 */
-    }
-}
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column; /* 改为垂直排列 */
+                align-items: center; /* 居中对齐 */
+            }
+            .nav-links a {
+                width: 80%; /* 设置宽度占比 */
+                margin-bottom: 10px; /* 添加底部间距 */
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Hola! Bonjour! 你好! こんにちは! Ciao!</h1>
+        <!-- 菜单按钮，控制导航栏显示/隐藏 -->
+        <button class="menu-button" onclick="toggleMenu()">☰ Menu</button>
     </header>
 
+    <!-- 侧边导航栏 -->
+    <nav class="nav-bar" id="navBar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="content-projects.html">Projects</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="achievements-temp.html">Achievements</a></li>
+            <li><a href="interests.html">Interests</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- 主内容区域 -->
     <div class="container">
+        <!-- 个人图像部分 -->
         <div class="profile-image">
             <img src="https://github.com/Alessio1Wong/bio/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20241225183532.jpg?raw=true" alt="Profile Image">
         </div>
+        <!-- 主要介绍内容 -->
         <h2>I'm Shaofu Wang</h2>
 
         <p>ABOUT ME</p>
@@ -118,16 +188,30 @@
 
         <p>I’m not just a tech head; I’m also a science cheerleader. I’m on a mission to make science as cool as the newest smartphone to the public.</p>
 
+        <!-- 导航链接部分 -->
         <div class="nav-links">
             <a href="content-projects.html">Projects</a>
-            <a href="achievements.html">Academics & Achievements</a>
-            <a href="interests.html">Interests</a>
-            <a href="contact.html">Contact</a><p>
+            <a href="work.html">Work</a>
+            <a href="service.html">Services</a>
         </div>
+	    <div class="nav-links">
+            <a href="achievements-temp.html">Achievements</a>
+            <a href="interests.html">Interests</a>
+            <a href="contact.html">Contact</a>
+	    </div>
     </div>
 
+    <!-- 页脚 -->
     <footer>
         <p>&copy; Shaofu Wang. All Rights Reserved.</p>
     </footer>
+
+    <!-- 控制导航栏切换显示的脚本 -->
+    <script>
+        function toggleMenu() {
+            const navBar = document.getElementById('navBar');
+            navBar.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>

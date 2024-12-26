@@ -1,86 +1,147 @@
+/* 全局样式 */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #333;
-    background-color: #f4f4f9;
+    font-family: Arial, sans-serif; /* 设置通用字体样式 */
+    margin: 0; /* 去除默认外边距 */
+    padding: 0; /* 去除默认内边距 */
+    color: #333; /* 设置文本颜色 */
+    background-color: #f4f4f9; /* 设置背景颜色 */
 }
 
+/* 头部样式 */
 header {
-    background-color: #6c63ff;
-    color: white;
-    padding: 1rem 0;
-    text-align: center;
+    background-color: #6c63ff; /* 背景色 */
+    color: white; /* 字体颜色 */
+    padding: 1rem 0; /* 上下内边距 */
+    text-align: center; /* 内容居中对齐 */
 }
 
 header h1 {
-    margin: 0;
-    font-size: 2rem;
+    margin: 0; /* 去除默认外边距 */
+    font-size: 2rem; /* 设置字体大小 */
 }
 
+/* 菜单按钮样式 */
+.menu-button {
+    position: absolute; /* 绝对定位 */
+    top: 1rem; /* 距顶部的距离 */
+    right: 1rem; /* 距右侧的距离 */
+    background-color: white; /* 背景色 */
+    color: #6c63ff; /* 按钮文本颜色 */
+    padding: 0.6rem; /* 内边距 */
+    border: none; /* 去除边框 */
+    border-radius: 5px; /* 圆角样式 */
+    cursor: pointer; /* 鼠标悬停为手型 */
+}
+
+.menu-button:hover {
+    background-color: #d3d3ff; /* 悬停时按钮的背景色 */
+}
+
+/* 侧边导航栏样式 */
+.nav-bar {
+    background-color: #333; /* 背景色 */
+    color: white; /* 字体颜色 */
+    position: absolute; /* 绝对定位 */
+    top: 0; /* 顶部对齐 */
+    right: 0; /* 靠右对齐 */
+    height: 100vh; /* 高度占满屏幕 */
+    width: 250px; /* 固定宽度 */
+    transform: translateX(100%); /* 隐藏在屏幕外 */
+    transition: transform 0.3s ease-in-out; /* 平滑过渡效果 */
+    z-index: 1000; /* 确保在其他内容之上 */
+}
+
+.nav-bar.active {
+    transform: translateX(0); /* 激活时导航栏进入屏幕 */
+}
+
+.nav-bar ul {
+    list-style: none; /* 去掉默认列表样式 */
+    padding: 0; /* 清除内边距 */
+    margin: 0; /* 清除外边距 */
+}
+
+.nav-bar ul li {
+    border-bottom: 1px solid #444; /* 添加分隔线 */
+}
+
+.nav-bar ul li a {
+    text-decoration: none; /* 移除默认下划线 */
+    color: white; /* 文本颜色 */
+    display: block; /* 块状显示 */
+    padding: 1rem; /* 内边距 */
+}
+
+.nav-bar ul li a:hover {
+    background-color: #575757; /* 悬停时背景颜色 */
+}
+
+/* 主容器样式 */
 .container {
-    padding: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
-    background: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    padding: 2rem; /* 内边距 */
+    max-width: 800px; /* 最大宽度 */
+    margin: 0 auto; /* 居中布局 */
+    background: white; /* 背景色 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+    border-radius: 8px; /* 圆角 */
 }
 
+/* 项目样式 */
 .project {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem; /* 下外边距 */
 }
 
 .project h2 {
-    color: #6c63ff;
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+    color: #6c63ff; /* 标题颜色 */
+    font-size: 1.5rem; /* 标题大小 */
+    margin-bottom: 0.5rem; /* 标题下外边距 */
 }
 
 .project p {
-    line-height: 1.6rem;
+    line-height: 1.6rem; /* 行高 */
 }
 
 .project img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-top: 1rem;
+    max-width: 100%; /* 最大宽度自适应 */
+    height: auto; /* 自动调整高度 */
+    border-radius: 8px; /* 圆角效果 */
+    margin-top: 1rem; /* 上外边距 */
 }
 
+/* 页脚样式 */
 footer {
-    text-align: center;
-    margin-top: 2rem;
-    font-size: 0.9rem;
-    color: #666;
+    text-align: center; /* 文本居中 */
+    margin-top: 2rem; /* 上外边距 */
+    font-size: 0.9rem; /* 字体大小 */
+    color: #666; /* 文本颜色 */
 }
 
-/* Responsive Styles */
+/* 响应式样式 */
 @media (max-width: 768px) {
     .container {
-        padding: 1rem;
-        max-width: 100%;
+        padding: 1rem; /* 减小内边距 */
+        max-width: 100%; /* 最大宽度填满 */
     }
 
     header h1 {
-        font-size: 1.5rem;
+        font-size: 1.5rem; /* 调整标题字体大小 */
     }
 
     .project h2 {
-        font-size: 1.2rem;
+        font-size: 1.2rem; /* 调整项目标题大小 */
     }
 
     .project p {
-        font-size: 1rem;
-        line-height: 1.4rem;
+        font-size: 1rem; /* 文本字体大小 */
+        line-height: 1.4rem; /* 调整行高 */
     }
 
     .project img {
-        max-width: 100%;
-        height: auto;
+        max-width: 100%; /* 图片最大宽度填满容器 */
+        height: auto; /* 自动调整高度 */
     }
 
     footer {
-        font-size: 0.8rem;
+        font-size: 0.8rem; /* 调整页脚字体大小 */
     }
 }
