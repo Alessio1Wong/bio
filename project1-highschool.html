@@ -55,13 +55,53 @@
             font-size: 0.9rem;
             color: #666;
         }
+.social-links {
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    .social-links a {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        margin: 0 5px;
+    }
+
+    .social-links img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .social-links img:hover {
+        transform: scale(1.2);
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
     </style>
 </head>
 <body>
     <header>
         <h1>High School Projects</h1>
     </header>
-
+    <nav class="nav-bar" id="navBar">
+    　<button class="close-button" onclick="toggleMenu()">✖</button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="content-projects.html">Projects</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="achievements.html">Achievements</a></li>
+            <li><a href="interests.html">Interests</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    <div class="social-links">
+        <a href="https://www.instagram.com/superechonimbus/profilecard/?igsh=dzA4b3FyYW9iNjR5" target="_blank" class="instagram-link" title="Visit my Instagram">
+            <img src="https://github.com/Alessio1Wong/bio/blob/main/insicon.png?raw=true" alt="Instagram" />
+        </a>
+    </div>
+    </nav>
     <div class="container">
         <div class="project">
             <h2>Investigations of Factors Influencing Air-Bubble Drag Reduction on Ship Hulls</h2>

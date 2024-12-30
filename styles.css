@@ -144,4 +144,49 @@ footer {
     footer {
         font-size: 0.8rem; /* 调整页脚字体大小 */
     }
+.close-button {
+    background-color: #333; /* 背景透明 */
+    border: none; /* 无边框 */
+    color: white; /* 文本颜色 */
+    font-size: 1.2rem; /* 字体大小 */
+    position: absolute; /* 绝对定位 */
+    top: 1rem; /* 距离顶部 */
+    right: 1rem; /* 距离右边 */
+    cursor: pointer; /* 鼠标悬停显示手型 */
+}
+
+.close-button:hover {
+    color: #575757; /* 悬停时颜色变化 */
+
+}
+/* 调整导航栏整体样式 */
+.nav-bar {
+    position: relative; /* 确保内部元素的绝对定位相对于导航栏 */
+}
+
+/* 社交链接样式 */
+.social-links {
+    position: absolute; /* 绝对定位，确保始终在导航栏内部固定 */
+    bottom: 1rem; /* 距离导航栏底部的间距 */
+    left: 0;
+    right: 0; /* 确保图标居中 */
+    text-align: center; /* 文本居中对齐 */
+}
+
+.social-links a {
+    display: inline-block; /* 作为块级显示 */
+    width: 32px; /* 图标宽度 */
+    height: 32px; /* 图标高度 */
+}
+
+.social-links img {
+    width: 100%; /* 图标适配父容器 */
+    height: auto;
+    border-radius: 5px; /* 图标圆角样式 */
+    transition: transform 0.3s, box-shadow 0.3s; /* 添加放大和阴影过渡效果 */
+}
+
+.social-links img:hover {
+    transform: scale(1.2); /* 鼠标悬停时放大 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加阴影 */
 }
