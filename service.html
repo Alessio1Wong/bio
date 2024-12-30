@@ -20,6 +20,7 @@
             color: white;
             padding: 1rem 0;
             text-align: center;
+            position: relative;
         }
 
         /* Header title styling */
@@ -27,6 +28,7 @@
             margin: 0;
             font-size: 2.5rem;
         }
+
         .menu-button {
             position: absolute;
             top: 1rem;
@@ -41,10 +43,12 @@
         .menu-button:hover {
             background-color: #d3d3ff;
         }
+
+        /* Navigation bar styling */
         .nav-bar {
             background-color: #333;
             color: white;
-            position: absolute;
+            position: fixed;
             top: 0;
             right: 0;
             height: 100vh;
@@ -53,139 +57,133 @@
             transition: transform 0.3s ease-in-out;
             z-index: 1000;
         }
+
         .nav-bar.active {
             transform: translateX(0);
         }
+
         .nav-bar ul {
             list-style: none;
             padding: 0;
             margin: 0;
         }
+
         .nav-bar ul li {
             border-bottom: 1px solid #444;
         }
+
         .nav-bar ul li a {
             text-decoration: none;
             color: white;
             display: block;
             padding: 1rem;
         }
+
         .nav-bar ul li a:hover {
             background-color: #575757;
         }
-        /* Main container styling */
-        .container {
-            padding: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+
+        .social-links {
             display: flex;
-            flex-direction: column;
-            align-items: center; /* Centers the project cards */
+            justify-content: center;
+            margin-top: 1rem;
+            padding-bottom: 1rem;
         }
 
-        /* Individual project card styling */
-        .project {
+        .social-links a {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            margin: 0 5px;
+        }
+
+        .social-links img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .social-links img:hover {
+            transform: scale(1.2);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Gallery styling */
+        .gallery {
             display: flex;
             flex-wrap: wrap;
-            margin-bottom: 2rem;
+            gap: 1rem;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+
+        .image-text-card {
+            flex: 1 1 calc(50% - 1rem);
+            max-width: calc(50% - 1rem);
             background: white;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            max-width: 800px; /* Limit width for better centering */
+            transition: transform 0.3s;
         }
 
-        /* Project image styling */
-        .project img {
-            width: 40%;
+        .image-container {
+            overflow: hidden;
+            height: 300px;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
+            transition: transform 0.3s;
         }
 
-        /* Content section inside each project */
-        .project-content {
-            padding: 1.5rem;
-            width: 60%;
+        .image-text-card:hover img {
+            transform: scale(1.1);
         }
 
-        /* Project title styling */
-        .project-title {
-            margin: 0;
-            font-size: 1.5rem;
-            color: #6c63ff;
+        .text-container {
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #333;
         }
 
-        /* Project description styling */
-        .project-description {
-            margin: 1rem 0;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-        /* Project description styling */
-        .project-description {
-            margin: 1rem 0;
-            font-size: 1rem;
-            line-height: 1.6;
+        @media (max-width: 768px) {
+            .image-text-card {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+
+            .gallery {
+                flex-direction: column;
+                align-items: center;
+            }
         }
 
-        /* Link button for detailed view */
-        .project-link {
-            display: inline-block;
-            padding: 0.6rem 1.2rem;
-            color: white;
-            background-color: #6c63ff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        /* Hover effect for link button */
-        .project-link:hover {
-            background-color: #5753cb;
-        }
-
-        /* Footer styling */
         footer {
             text-align: center;
             margin-top: 2rem;
-            padding: 1rem 0;
+            padding: 1rem;
             background-color: #333;
             color: white;
             font-size: 0.9rem;
         }
-.social-links {
-        display: flex;
-        justify-content: center;
-        margin-top: 1rem;
-    }
-
-    .social-links a {
-        display: inline-block;
-        width: 32px;
-        height: 32px;
-        margin: 0 5px;
-    }
-
-    .social-links img {
-        width: 100%;
-        height: auto;
-        border-radius: 5px;
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .social-links img:hover {
-        transform: scale(1.2);
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    }
     </style>
 </head>
 <body>
     <!-- Header section -->
     <header>
-        <h1>Projects Overview</h1>
+        <h1>Services</h1>
         <button class="menu-button" onclick="toggleMenu()">☰ Menu</button>
     </header>
+
+    <!-- Navigation bar -->
     <nav class="nav-bar" id="navBar">
-    　<button class="close-button" onclick="toggleMenu()">✖</button>
+        <button class="close-button" onclick="toggleMenu()">✖</button>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="content-projects.html">Projects</a></li>
@@ -195,38 +193,51 @@
             <li><a href="interests.html">Interests</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-    <div class="social-links">
-        <a href="https://www.instagram.com/superechonimbus/profilecard/?igsh=dzA4b3FyYW9iNjR5" target="_blank" class="instagram-link" title="Visit my Instagram">
-            <img src="https://github.com/Alessio1Wong/bio/blob/main/insicon.png?raw=true" alt="Instagram" />
-        </a>
-    </div>
+        <div class="social-links">
+            <a href="https://www.instagram.com/superechonimbus/profilecard/?igsh=dzA4b3FyYW9iNjR5" target="_blank" title="Visit my Instagram">
+                <img src="https://github.com/Alessio1Wong/bio/blob/main/insicon.png?raw=true" alt="Instagram" />
+            </a>
+        </div>
     </nav>
-    <!-- Main content container -->
-    <div class="container">
-        <!-- First project card -->
-        <div class="project">
-            <!-- Project image -->
-        <button class="menu-button" onclick="toggleMenu()">☰ Menu</button>
-            <div class="project-content">
-                <h2 class="project-title">Due to Secrets Act, noting is here.</h2>
-            </div>
+
+    <!-- Gallery section -->
+    <div class="gallery">
+        <!-- First image-text card -->
+        <div class="image-text-card">
+            <a href="studentcouncil.html" target="_blank" class="card-link">
+                <div class="image-container">
+                    <img src="https://mmbiz.qpic.cn/mmbiz_jpg/pfm7AkVWgCzItFdoUpxt7rzcfe7RvpYSZIOMeXcQibcbju3PNdLhOEu2REUW3D7p1G9WU516txM7QAsgweFn9XA/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="Image 1">
+                </div>
+                <div class="text-container">
+                    <p><strong>Student Council of Shanghai Youth Institute of Sciences</strong></p>
+                </div>
+            </a>
+        </div>
+
+        <!-- Second image-text card -->
+        <div class="image-text-card">
+            <a href="https://www.example2.com" target="_blank" class="card-link">
+                <div class="image-container">
+                    <img src="https://via.placeholder.com/150" alt="Image 2">
+                </div>
+                <div class="text-container">
+                    <p>Image 2 Description. Click to learn more!</p>
+                </div>
+            </a>
         </div>
     </div>
 
     <!-- Footer section -->
     <footer>
-        <div style="text-align: center; margin-top: 2rem;">
-            <a href="index.html" style="padding: 0.6rem 1.2rem; background-color: #6c63ff; color: white; text-decoration: none; border-radius: 5px; transition: background-color 0.3s;">Back to home</a>
-        </div>
+        <a href="index.html" style="padding: 0.6rem 1.2rem; background-color: #6c63ff; color: white; text-decoration: none; border-radius: 5px; transition: background-color 0.3s;">Back to home</a>
         <p>&copy; 2024 Shaofu Wang. All Rights Reserved.</p>
-
     </footer>
+
     <script>
         function toggleMenu() {
             const navBar = document.getElementById('navBar');
             navBar.classList.toggle('active');
         }
-
     </script>
 </body>
 </html>
