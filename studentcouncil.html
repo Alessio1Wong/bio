@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>High School Projects</title>
+    <title>Student Council of SYIS</title>
 <link rel="stylesheet" href="styles.css">
 
     <style>
@@ -44,7 +44,7 @@
             line-height: 1.6rem;
         }
         .content img {
-            max-width: 500px;
+            width: 50%;
             height: auto;
             margin: 0 auto;
             border-radius: 8px;
@@ -80,6 +80,16 @@
         transform: scale(1.2);
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     }
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column; /* 改为垂直排列 */
+                align-items: center; /* 居中对齐 */
+            }
+            .nav-links a {
+                width: 80%; /* 设置宽度占比 */
+                margin-bottom: 10px; /* 添加底部间距 */
+            }
+        }
     </style>
 </head>
     <header>
@@ -114,9 +124,9 @@
 
     <footer>
         <div style="text-align: center; margin-top: 2rem;">
-            <a href="service.html" style="padding: 0.6rem 1.2rem; background-color: #6c63ff; color: white; text-decoration: none; border-radius: 5px; transition: background-color 0.3s;">Back</a>
+            <a href="services.html" style="padding: 0.6rem 1.2rem; background-color: #6c63ff; color: white; text-decoration: none; border-radius: 5px; transition: background-color 0.3s;">Back</a>
         </div>
-        <p>&copy; 2024 Student Council. All Rights Reserved.</p>
+        <p>&copy; Shaofu Wang All Rights Reserved.</p>
     </footer>
 </body>
 </html>
