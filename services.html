@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <style>
+        /* General body styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* Header section styling */
+        header {
+            background-color: #6c63ff;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Header title styling */
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        .menu-button {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: white;
+            color: #6c63ff;
+            padding: 0.6rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .menu-button:hover {
+            background-color: #d3d3ff;
+        }
+
+        /* Navigation bar styling */
+        .nav-bar {
+            background-color: #333;
+            color: white;
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 250px;
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+            z-index: 1000;
+        }
+
+        .nav-bar.active {
+            transform: translateX(0);
+        }
+
+        .nav-bar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-bar ul li {
+            border-bottom: 1px solid #444;
+        }
+
+        .nav-bar ul li a {
+            text-decoration: none;
+            color: white;
+            display: block;
+            padding: 1rem;
+        }
+
+        .nav-bar ul li a:hover {
+            background-color: #575757;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            margin: 0 5px;
+        }
+
+        .social-links img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .social-links img:hover {
+            transform: scale(1.2);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Gallery styling */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+
+        .image-text-card {
+            flex: 1 1 calc(50% - 1rem);
+            max-width: calc(50% - 1rem);
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .image-container {
+            overflow: hidden;
+            height: 300px;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .image-text-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .text-container {
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .image-text-card {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+
+            .gallery {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: #333;
+            color: white;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header section -->
+    <header>
+        <h1>Services</h1>
+        <button class="menu-button" onclick="toggleMenu()">☰ Menu</button>
+    </header>
+
+    <!-- Navigation bar -->
+    <nav class="nav-bar" id="navBar">
+        <button class="close-button" onclick="toggleMenu()">✖</button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="content-projects.html">Projects</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="achievements.html">Achievements</a></li>
+            <li><a href="interests.html">Interests</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="social-links">
+            <a href="https://www.instagram.com/superechonimbus/profilecard/?igsh=dzA4b3FyYW9iNjR5" target="_blank" title="Visit my Instagram">
+                <img src="https://github.com/Alessio1Wong/bio/blob/main/insicon.png?raw=true" alt="Instagram" />
+            </a>
+        </div>
+    </nav>
+
+    <!-- Gallery section -->
+    <div class="gallery">
+        <!-- First image-text card -->
+        <div class="image-text-card">
+            <a href="studentcouncil.html" target="_blank" class="card-link">
+                <div class="image-container">
+                    <img src="https://github.com/Alessio1Wong/bio/blob/main/studentcouncil.png?raw=true" alt="Image 1">
+                </div>
+                <div class="text-container">
+                    <p><strong>Student Council of Shanghai Youth Institute of Sciences</strong></p>
+                </div>
+            </a>
+        </div>
+
+        <!-- Second image-text card -->
+        <div class="image-text-card">
+            <a href="schoollecture.html" target="_blank" class="card-link">
+                <div class="image-container">
+                    <img src="https://github.com/Alessio1Wong/bio/blob/main/schoollecture1.jpg?raw=true" alt="Image 2">
+                </div>
+                <div class="text-container">
+                    <p><strong>School Science Lecture for Adolescents</strong></p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer section -->
+    <footer>
+        <a href="index.html" style="padding: 0.6rem 1.2rem; background-color: #6c63ff; color: white; text-decoration: none; border-radius: 5px; transition: background-color 0.3s;">Back to home</a>
+        <p>&copy; 2024 Shaofu Wang. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navBar = document.getElementById('navBar');
+            navBar.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
