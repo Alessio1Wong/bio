@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remote Chemistry Lab Assistant</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #6c63ff;
+            color: white;
+            padding: 1.5rem 0;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px; /* 图片间距 */
+            margin-top: 20px;
+        }
+
+        .image-row img {
+            max-width: calc(40% - 15px); /* 图片宽度适配两列布局 */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .image-row img:hover {
+            transform: scale(1); /* 鼠标悬停放大效果 */
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #6c63ff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            background-color: #5757ff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Remote Chemistry Lab Assistant</h1>
+    </header>
+
+    <div class="content">
+        <h2>Project Overview</h2>
+        <p>
+            Designed a remote chemistry lab assistant to facilitate junior high school chemistry experiments such as dissolution, filtration, and evaporation.
+            The assistant addresses the challenges of inaccessible laboratory resources, using an automated box controlled via a network for remote access.
+        </p>
+        <p>
+            This project won the First Prize in the Shanghai Youth Science and Technology Innovation Competition and participated in China International
+            College Students' Innovation Competition (2023) - Emerging Track.
+        </p>
+
+        <h2>Features</h2>
+        <ul>
+            <li>Multi-functional areas for chemicals, instruments, and waste handling</li>
+            <li>Automated robotic arm for precise handling of equipment</li>
+            <li>Fire safety measures with emergency shut-off systems</li>
+            <li>Real-time monitoring using ESP32CAM with interactive controls</li>
+        </ul>
+
+        <h2>Innovation</h2>
+        <p>
+            By integrating ESP32CAM and Arduino, the assistant supports online and offline hybrid education, promoting equal access to laboratory resources
+            while preparing for future educational innovations.
+        </p>
+
+        <!-- Images in a row -->
+        <div class="image-row">
+            <img src="https://github.com/Alessio1Wong/bio/blob/main/remotechemassistant/fig2.jpg?raw=true" alt="Remote Chemistry Lab Assistant - Figure 2">
+            <img src="https://github.com/Alessio1Wong/bio/blob/main/remotechemassistant/fig3.jpg?raw=true" alt="Remote Chemistry Lab Assistant - Figure 3">
+        </div>
+
+        <a href="summary-highschoolprojects.html">Back</a>
+    </div>
+</body>
+</html>
