@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>High School Projects</title>
-<link rel="stylesheet" href="styles.css">
-
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -33,7 +31,8 @@
             border-radius: 8px;
         }
         .project {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem; /* 项目之间增加间隔 */
+            text-align: left;
         }
         .project h2 {
             color: #6c63ff;
@@ -48,6 +47,7 @@
             height: auto;
             border-radius: 8px;
             margin-top: 1rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* 增加图片阴影效果 */
         }
         footer {
             text-align: center;
@@ -55,43 +55,26 @@
             font-size: 0.9rem;
             color: #666;
         }
-.social-links {
-        display: flex;
-        justify-content: center;
-        margin-top: 1rem;
-    }
-
-    .social-links a {
-        display: inline-block;
-        width: 32px;
-        height: 32px;
-        margin: 0 5px;
-    }
-
-    .social-links img {
-        width: 100%;
-        height: auto;
-        border-radius: 5px;
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .social-links img:hover {
-        transform: scale(1.2);
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    }
-        @media (max-width: 768px) {
-            .nav-links {
-                flex-direction: column; /* 改为垂直排列 */
-                align-items: center; /* 居中对齐 */
-            }
-            .nav-links a {
-                width: 80%; /* 设置宽度占比 */
-                margin-bottom: 10px; /* 添加底部间距 */
-            }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #6c63ff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out;
+        }
+        a:hover {
+            background-color: #5753cb;
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>High School Projects</h1>
+    </header>
+
     <div class="container">
         <div class="project">
             <h2>Investigations of Factors Influencing Air-Bubble Drag Reduction on Ship Hulls</h2>
@@ -99,12 +82,11 @@
             <p>This project won the First Prize in the Shanghai Youth Science and Technology Innovation Competition and highlighted the potential for drag-reduction technology to advance eco-friendly ship designs and applications.</p>
             <img src="https://github.com/Alessio1Wong/bio/blob/main/quad%20chart%20t.jpg?raw=true" alt="Project Poster">
         </div>
+
     </div>
 
     <footer>
-        <div style="text-align: center; margin-top: 2rem;">
-            <a href="summary-highschoolprojects.html" style="padding: 0.6rem 1.2rem; background-color: #6c63ff; color: white; text-decoration: none; border-radius: 5px; transition: background-color 0.3s;">Back</a>
-        </div>
+        <a href="summary-highschoolprojects.html">Back</a>
         <p>&copy; Shaofu Wang. All Rights Reserved.</p>
     </footer>
 </body>

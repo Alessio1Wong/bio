@@ -190,3 +190,66 @@ footer {
     transform: scale(1.2); /* 鼠标悬停时放大 */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加阴影 */
 }
+
+
+/* Gallery整体布局 */
+.gallery {
+    display: flex; /* 使用flex布局 */
+    flex-wrap: wrap; /* 允许内容换行 */
+    gap: 1rem; /* 图片之间的间距 */
+    justify-content: space-between; /* 水平均匀分布 */
+    max-width: 800px; /* 限制画廊宽度 */
+    margin: 0 auto; /* 居中对齐 */
+    padding: 1rem; /* 内边距 */
+}
+
+/* 单个卡片布局 */
+.image-text-card {
+    flex: 1 1 calc(50% - 1rem); /* 每行两张图片，间距1rem */
+    max-width: calc(50% - 1rem); /* 保持图片宽度在行内 */
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+/* 鼠标悬停时卡片上移 */
+.image-text-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* 图片容器样式 */
+.image-container {
+    overflow: hidden;
+    height: 300px; /* 固定图片高度 */
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 图片居中裁剪 */
+    transition: transform 0.3s;
+}
+
+/* 悬停时图片放大 */
+.image-text-card:hover img {
+    transform: scale(1.1);
+}
+
+/* 文本样式 */
+.text-container {
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+/* 响应式布局 */
+@media (max-width: 768px) {
+    .image-text-card {
+        flex: 1 1 100%; /* 在小屏幕每行只显示一张图片 */
+        max-width: 100%;
+    }
+}
