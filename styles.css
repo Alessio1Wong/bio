@@ -13,6 +13,7 @@ header {
     color: white; /* 字体颜色 */
     padding: 1rem 0; /* 上下内边距 */
     text-align: center; /* 内容居中对齐 */
+    overflow-x: hidden; /* 禁止横向滚动 */
 }
 
 header h1 {
